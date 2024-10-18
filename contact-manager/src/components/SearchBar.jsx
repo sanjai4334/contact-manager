@@ -3,7 +3,7 @@ import React from 'react';
 
 const SearchBar = ({ searchTerm, onSearchChange }) => {
   return (
-    <div className="mb-3">
+    <div className="container mt-3">
       <input
         type="text"
         className="form-control"
