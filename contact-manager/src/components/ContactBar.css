@@ -1,0 +1,11 @@
+/* Animation for smooth collapse and expand */
+.collapse-content {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+  
+  .collapse-content.expanded {
+    height: auto;
+  }
+  
