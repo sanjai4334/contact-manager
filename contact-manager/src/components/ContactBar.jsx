@@ -6,18 +6,15 @@ const ContactBar = ({ contact, onEdit, onDelete }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [showQRCode, setShowQRCode] = useState(false);
 
-  // Toggle expanded view
   const toggleExpanded = () => {
     setIsExpanded((prev) => !prev);
   };
 
-  // Generate initials for fallback profile picture
   const getInitials = (name) => {
     const [firstName, lastName] = name.split(" ");
     return `${firstName[0].toUpperCase()}${lastName ? lastName[0].toUpperCase() : ''}`;
   };
 
-  // Use a placeholder or initials if no profile picture
   const profilePic = contact.profilePic ? (
     <img
       src={contact.profilePic}
@@ -31,7 +28,6 @@ const ContactBar = ({ contact, onEdit, onDelete }) => {
     </div>
   );
 
-  // vCard Generation
   const downloadVCard = (e) => {
     e.stopPropagation();
     const vCardData = `
@@ -52,18 +48,15 @@ END:VCARD
     document.body.removeChild(link);
   };
 
-  // Create QR data with more contact info
   const qrData = `BEGIN:VCARD\nVERSION:3.0\nFN:${contact.name}\nTEL:${contact.phone}\nEMAIL:${contact.email}\nEND:VCARD`;
 
   return (
     <div className="card mb-3">
       <div className="card-body p-2 d-flex align-items-center" onClick={toggleExpanded} style={{ cursor: 'pointer' }}>
-        {/* Profile Picture and Name Only */}
         {profilePic}
         <h5 className="mb-0 flex-grow-1">{contact.name}</h5>
       </div>
 
-      {/* Expanded Details (only shown when expanded) */}
       {isExpanded && (
         <div className="card-body pt-0">
           <p className="card-text mb-1"><FaPhone className="me-2" /> {contact.phone}</p>
@@ -75,7 +68,6 @@ END:VCARD
             <FaFileDownload className="icon" onClick={downloadVCard} />
           </div>
 
-          {/* QR Code (shown only if QR icon is clicked) */}
           {showQRCode && (
             <div className="mt-3 text-center">
               <h6>QR Code:</h6>

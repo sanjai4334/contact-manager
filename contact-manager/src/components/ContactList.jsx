@@ -1,4 +1,3 @@
-// src/components/ContactList.jsx
 import React from 'react';
 import ContactBar from './ContactBar';
 

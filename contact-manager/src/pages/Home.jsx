@@ -1,4 +1,3 @@
-// src/pages/Home.jsx
 import React, { useState } from 'react';
 import ContactList from '../components/ContactList';
 import ContactForm from '../components/ContactForm';
@@ -25,7 +24,6 @@ const Home = () => {
     setContacts(updatedContacts);
   };
 
-  // Filter contacts based on search term
   const filteredContacts = contacts.filter(contact => 
     contact.name.toLowerCase().includes(searchTerm.toLowerCase())
   );

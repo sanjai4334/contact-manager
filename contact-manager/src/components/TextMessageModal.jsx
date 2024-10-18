@@ -1,4 +1,3 @@
-// src/components/TextMessageModal.jsx
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -8,8 +7,8 @@ const TextMessageModal = ({ contact, show, onHide }) => {
 
   const handleSendMessage = () => {
     alert(`Message sent to ${contact.name}: "${message}"`);
-    setMessage(''); // Clear the message input
-    onHide(); // Close the modal
+    setMessage('');
+    onHide();
   };
 
   return (

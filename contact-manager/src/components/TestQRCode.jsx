@@ -1,4 +1,3 @@
-// src/components/TestQRCode.jsx
 import React from 'react';
 import QRCode from 'qrcode.react';
 
